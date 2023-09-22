@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/rank/rank"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "响马读paper",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "打卡"
+    }, {
+      "pagePath": "pages/rank/rank",
+      "text": "排名"
+    }]
+  },
+  "style": "v2",
+  "darkmode": true,
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
+}

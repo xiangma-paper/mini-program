@@ -1,0 +1,28 @@
+<view data-weui-theme="{{theme}}">
+  <mp-form>
+    <mp-cells>
+      <mp-cell class="header" title="昵称">
+        <input id="inputNickname" type="nickname" class="my-input weui-input {{nicknameError ? 'error-input' : ''}}" placeholder="请输入昵称" model:value="{{nickname}}"/>
+      </mp-cell>
+      <mp-cell class="header" title="文献ID">
+        <view style="display:flex; flex-direction:row; align-items:center;">
+          <span style="flex:1; margin-right:10px;">
+            <input id="inputPaperId" type="text" class="my-input weui-input {{paperIdError ? 'error-input' : ''}}" placeholder="请输入DOI/PMID/PMCID/arXivID" model:value="{{paperId}}"/>
+          </span>
+          <button type="primary" size="mini" plain="true" bind:tap="queryPaperInfo">查询</button>
+        </view>
+      </mp-cell>
+      <mp-cell>
+        <view><text>{{paperInfo}}</text></view>
+        <view><text style="font-weight:bold;">{{paperTitle}}</text></view>
+        <view><text style="font-style:italic;">{{paperAuthors}}</text></view>
+      </mp-cell>
+      <mp-cell>
+        <textarea id="inputComment" class="my-input {{commentError ? 'error-input' : ''}}" auto-height placeholder="请输入对这篇文献的评价或推荐语" style="width:100%; min-height: 5em;" model:value="{{comment}}" />
+      </mp-cell>
+      <mp-cell style="align-items: center;">
+        <button form-type="submit" bindtap="submitPaperComment" type="primary">打卡提交</button>
+      </mp-cell>
+    </mp-cells>
+  </mp-form>
+</view>
