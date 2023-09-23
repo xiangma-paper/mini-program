@@ -1,1 +1,29 @@
-/* pages/rank.wxss */
+.rank-tab {
+  font-size: 12px;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+.table {
+  font-size: 12px;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid darkgray;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid darkgray;
+}
+.header {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+.cell {
+  padding: 8px;
+  border: none;
+  flex: 1;
+  text-align: center;
+}
