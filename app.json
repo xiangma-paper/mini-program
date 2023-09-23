@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/rank/rank"
+    "pages/rank/rank",
+    "pages/papers/papers",
+    "pages/checkin/checkin"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -10,13 +12,24 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "打卡"
-    }, {
-      "pagePath": "pages/rank/rank",
-      "text": "排名"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "响马榜单"
+      },
+      {
+        "pagePath": "pages/papers/papers",
+        "text": "社群分享"
+      },
+      {
+        "pagePath": "pages/checkin/checkin",
+        "text": "我的打卡"
+      }
+    ]
   },
   "style": "v2",
   "darkmode": true,

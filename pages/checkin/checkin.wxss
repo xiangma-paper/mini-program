@@ -1,0 +1,13 @@
+/* pages/checkin/checkin.wxss */
+.header .weui-cell__hd {
+  width: 70px;
+}
+
+.my-input {
+  border: 1px solid darkgray;
+  background-color: #ffffd0;
+}
+
+.error-input {
+  border: 2rpx solid red;
+}
