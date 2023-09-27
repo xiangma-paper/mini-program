@@ -1,4 +1,27 @@
-/* pages/checkin/checkin.wxss */
+.error {
+  color: red;
+  text-align: center;
+  height: 80px;
+  line-height: 80px;
+}
+.login-form {
+  padding: 20px;
+}
+.form-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.form-control {
+  display: inline-block;
+}
+.login-form input {
+  border: 1px solid darkgray;
+}
+.notes {
+  font-size: small;
+}
+
 .header .weui-cell__hd {
   width: 70px;
 }
@@ -7,7 +30,6 @@
   border: 1px solid darkgray;
   background-color: #ffffd0;
 }
-
 .error-input {
   border: 2rpx solid red;
 }

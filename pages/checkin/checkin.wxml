@@ -1,4 +1,19 @@
-<view data-weui-theme="{{theme}}">
+<view wx:if="{{!loggedIn}}" class="container">
+  <view class="error">当前尚未登录，无法进行打卡</view>
+  <view class="login-form">
+    <view class="form-row">
+      <label class="form-control">昵称：</label>
+      <input class="form-control" id="inputNickname" type="nickname" placeholder="请输入昵称" model:value="{{nickname}}"/>
+    </view>
+    <view class="form-row">
+      <button plain="true" size="mini" bind:tap="login">登录</button>
+    </view>
+    <view class="form-row">
+      <text class="notes">注：此昵称将用于分享结果展示和统计，建议使用微信群中的群昵称</text>
+    </view>
+  </view>
+</view>
+<view wx:else data-weui-theme="{{theme}}">
   <mp-form>
     <mp-cells>
       <mp-cell class="header" title="昵称">

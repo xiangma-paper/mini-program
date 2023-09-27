@@ -1,3 +1,5 @@
+const app = getApp()
+
 Page({
   data: {
     currentTab: 0,
@@ -5,11 +7,9 @@ Page({
     tables: []
   },
   onLoad: function () {
-    console.log('rank - onLoad')
     wx.request({
-      url: 'https://paper-hub.cn/api/fetch_rank_list',
+      url: app.host + '/api/fetch_rank_list',
       success: (res) => {
-        console.log(res)
         this.setData({tables: res.data.results})
       }
     })
