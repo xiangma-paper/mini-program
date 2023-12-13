@@ -1,43 +1,40 @@
-<view wx:if="{{!loggedIn}}" class="container">
-  <view class="error">当前尚未登录，无法进行打卡</view>
-  <view class="login-form">
+<view class="container">
+  <view class="user-info">
     <view class="form-row">
-      <label class="form-control">昵称：</label>
-      <input class="form-control" id="inputNickname" type="nickname" placeholder="请输入昵称" model:value="{{nickname}}"/>
-    </view>
-    <view class="form-row">
-      <button plain="true" size="mini" bind:tap="login">登录</button>
-    </view>
-    <view class="form-row">
-      <text class="notes">注：此昵称将用于分享结果展示和统计，建议使用微信群中的群昵称</text>
+      <label class="nickname-label">昵称：</label>
+      <input id="nickname-input" class="nickname-input" type="nickname" placeholder="请输入昵称" value="{{nickname}}"/>
     </view>
   </view>
-</view>
-<view wx:else data-weui-theme="{{theme}}">
-  <mp-form>
-    <mp-cells>
-      <mp-cell class="header" title="昵称">
-        <input id="inputNickname" type="nickname" class="my-input weui-input {{nicknameError ? 'error-input' : ''}}" placeholder="请输入昵称" model:value="{{nickname}}"/>
-      </mp-cell>
-      <mp-cell class="header" title="文献ID">
-        <view style="display:flex; flex-direction:row; align-items:center;">
-          <span style="flex:1; margin-right:10px;">
-            <input id="inputPaperId" type="text" class="my-input weui-input {{paperIdError ? 'error-input' : ''}}" placeholder="请输入DOI/PMID/PMCID/arXivID" model:value="{{paperId}}"/>
-          </span>
-          <button type="primary" size="mini" plain="true" bind:tap="queryPaperInfo">查询</button>
+  <view class="group-box">
+    <view class="group-box-title">新建打卡分享</view>
+    <view class="form-row">
+      <input id="paper-id-input" class="input" placeholder="请输入DOI/PMID/PMCID/arXivID"/>
+      <button class="search-btn" style="width: 132rpx; height: 64rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" bind:tap="searchClick">搜索</button>
+    </view>
+    <view class="instruction" style="font-size: small">若无文献ID，可直接点击“搜索”按钮进入手动填写界面</view>
+  </view>
+  <view class="result-list">
+    <view class="group-box-title">已完成打卡分享</view>
+    <block wx:if="{{papers.length > 0}}">
+      <block wx:for="{{papers}}" wx:key="index">
+        <view class="result-item">
+          <view class="create-time">{{item.create_time}}</view>
+          <view class="title">{{item.title}}</view>
+          <view class="paper-info">
+            <text>{{item.pub_year}}, {{item.journal}}</text>
+            <text wx:if="{{item.doi}}">. doi: {{item.doi}}</text>
+            <text wx:if="{{item.pmid}}">. PMID: {{item.pmid}}</text>
+            <text wx:if="{{item.arxiv_id}}">. arXiv ID: {{item.arxiv_id}}</text>
+            <text wx:if="{{item.pmcid}}">. PMCID: {{item.pmcid}}</text>
+          </view>
+          <view class="comment">{{item.comments}}</view>
         </view>
-      </mp-cell>
-      <mp-cell>
-        <view><text>{{paperInfo}}</text></view>
-        <view><text style="font-weight:bold;">{{paperTitle}}</text></view>
-        <view><text style="font-style:italic;">{{paperAuthors}}</text></view>
-      </mp-cell>
-      <mp-cell>
-        <textarea id="inputComment" class="my-input {{commentError ? 'error-input' : ''}}" auto-height placeholder="请输入对这篇文献的评价或推荐语" style="width:100%; min-height: 5em;" model:value="{{comment}}" />
-      </mp-cell>
-      <mp-cell style="align-items: center;">
-        <button form-type="submit" bindtap="submitPaperComment" type="primary">打卡提交</button>
-      </mp-cell>
-    </mp-cells>
-  </mp-form>
+      </block>
+    </block>
+    <block wx:else>
+      <view class="no-data-box">
+        目前尚无任何打卡分享内容。
+      </view>
+    </block>
+  </view>
 </view>

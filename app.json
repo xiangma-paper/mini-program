@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/checkin/checkin",
     "pages/rank/rank",
     "pages/papers/papers",
-    "pages/checkin/checkin"
+    "pages/about/about",
+    "pages/add/add"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,20 +15,20 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/rank/rank",
-        "text": "响马榜单"
+        "pagePath": "pages/checkin/checkin",
+        "text": "打卡"
       },
       {
         "pagePath": "pages/papers/papers",
-        "text": "社群分享"
+        "text": "文献"
       },
       {
-        "pagePath": "pages/checkin/checkin",
-        "text": "我的打卡"
+        "pagePath": "pages/rank/rank",
+        "text": "榜单"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "社群"
       }
     ]
   },

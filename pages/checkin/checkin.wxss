@@ -1,35 +1,114 @@
-.error {
-  color: red;
-  text-align: center;
-  height: 80px;
-  line-height: 80px;
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
 }
-.login-form {
-  padding: 20px;
+
+.user-info {
+  padding: 20rpx;
 }
+
 .form-row {
   display: flex;
-  justify-content: center;
-  margin-top: 50px;
+  align-items: center;
 }
-.form-control {
+
+.user-info .nickname-label {
+  width: 100rpx;
+}
+
+.user-info .nickname-input {
+  flex: 1;
+  border-bottom: 1px darkgray solid;
+}
+
+.group-box {
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  border: 1px solid #ccc;
+  border-radius: 5rpx;
+  background-color: #ddd;
+}
+
+.group-box-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  margin-right: 10rpx;
+  font-size: 32rpx;
+}
+
+.input {
+  flex: 1;
+  padding: 10rpx;
+  border: 1px solid #ccc;
+  border-radius: 5rpx;
+  background-color: #fff;
+}
+
+.search-btn {
+  background-color: #007aff;
+  color: #fff;
+  padding: 10rpx;
+  border: none;
+  border-radius: 5rpx;
+  margin-left: 10rpx;
+  width: 120rpx;
+  height: 64rpx;
+  display: block;
+  box-sizing: border-box;
+  left: 0rpx;
+  top: 0rpx;
+  font-size: 30rpx;
+  font-weight: normal;
+}
+
+.instruction {
+  margin-top: 10rpx;
+  color: #999;
+}
+
+.result-list {
+  margin-top: 10rpx;
+}
+
+.result-list .result-item {
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  border: 1px solid #ccc;
+  border-radius: 5rpx;
+}
+
+.result-list .result-item:hover {
+  background-color: lightblue;
+}
+
+.result-list .result-item .create-time {
+  float: right;
+}
+
+.result-list .result-item .title {
+  font-weight: bold;
+}
+
+.result-list .no-data-box {
+  padding: 0 20rpx;
+  font-size: 30rpx;
+  display: flex;
+}
+
+.link-text {
   display: inline-block;
-}
-.login-form input {
-  border: 1px solid darkgray;
-}
-.notes {
-  font-size: small;
-}
-
-.header .weui-cell__hd {
-  width: 70px;
-}
-
-.my-input {
-  border: 1px solid darkgray;
-  background-color: #ffffd0;
-}
-.error-input {
-  border: 2rpx solid red;
+  color: blue; /* Adjust the color as needed */
+  text-decoration: underline; /* Underline the link text */
+  margin: 0 5px; /* Add margin for spacing between links */
 }
