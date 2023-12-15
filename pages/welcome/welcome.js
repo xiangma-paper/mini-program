@@ -1,4 +1,5 @@
-const api = require('../../utils/api.js');
+const app = getApp()
+const api = require('../../utils/api.js')
 
 Page({
   data: {
@@ -6,22 +7,19 @@ Page({
     nickname: '',
     isNicknameError: false,
     inputFocus: false,
-    token: '',
-    csrfToken: '',
   },
   onLoad: function() {
+    console.log('welcome.onLoad()')
     wx.showLoading({title: '正在载入……', mask: true})
     api.wxLogin((error, res) => {
       if (error) {
-        wx.showToast({title: '登录失败', icon: 'none'});
-        console.error('Login failed:', error);
+        wx.showToast({title: '登录失败', icon: 'none'})
+        console.error('Login failed:', error)
       } else {
-        console.log('Login success:', res);
+        console.log('Login success:', res)
         if (res.data.success) {
-          this.setData({
-            token: res.data.token,
-            csrfToken: res.data.csrfToken
-          })
+          app.token = res.data.token
+          app.csrfToken = res.data.csrfToken
           wx.setStorage({key: 'token', data: res.data.token})
           wx.setStorage({key: 'csrfToken', data: res.data.csrfToken})
           if (res.data.nickname != '') {
@@ -52,7 +50,7 @@ Page({
     if (this.validateNickname()) {
       this.setData({isNicknameError: false})
       wx.showLoading({title: '正在登录……', mask: true})
-      api.updateNickname(this.data.csrfToken, this.data.token, this.data.nickname, (error, res) => {
+      api.updateNickname(this.data.nickname, (error, res) => {
         wx.hideLoading();
         if (error) {
         } else {

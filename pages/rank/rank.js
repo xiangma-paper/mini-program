@@ -1,4 +1,5 @@
 const app = getApp()
+const api = require('../../utils/api.js')
 
 Page({
   data: {
@@ -7,9 +8,13 @@ Page({
     tables: []
   },
   onLoad: function () {
-    wx.request({
-      url: app.host + '/api/fetch_rank_list',
-      success: (res) => {
+    console.log('checkin.onLoad()')
+    api.fetchRankList((error, res) => {
+      if (error) {
+        wx.showToast({title: '载入榜单失败', icon: 'none'})
+        console.error('Fetch rank list failed:', error)
+      } else {
+        console.log(res)
         this.setData({tables: res.data.results})
       }
     })

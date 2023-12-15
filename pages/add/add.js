@@ -1,6 +1,6 @@
 Page({
   data: { },
-
-  onLoad(options) {
-  },
+  onLoad: function() {
+    console.log('add.onLoad()')
+  }
 })

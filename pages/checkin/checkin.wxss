@@ -39,6 +39,7 @@
   border: 1px solid #ccc;
   border-radius: 5rpx;
   background-color: #fff;
+  height: 40rpx;
 }
 
 .search-btn {

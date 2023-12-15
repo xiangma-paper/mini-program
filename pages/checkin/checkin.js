@@ -6,6 +6,7 @@ Page({
     papers: []
   },
   onLoad: function() {
+    console.log('checkin.onLoad()')
   },
   onPaperIdChanged: function(e) {
     this.data.paperId = e.detail.value

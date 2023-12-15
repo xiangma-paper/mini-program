@@ -6,14 +6,13 @@
     <text user-select="true">坚持读paper，一起精进60年。</text>
   </view>
   <view class="section">
-    <text class="section-title">简介</text>
-    <text class="section-content" user-select="true">
-      <text class="paragraph">我们是一个学术交流社群，目前以微信群形式组织并开展活动，社群成员要求每月至少读一篇学术文献（paper）并打卡，期望以这种互相监督的形式，收获个人与社群的共同成长。</text>
-      <text class="paragraph">如需进群，请与我联系（微信号：yanlinlin82，备注：申请进群读paper），并提前了解如下群规则。</text>
-    </text>
+    <view class="section-title">简介</view>
+    <view class="paragraph">“响马读paper”是一个学术社群。每位社群成员每月应读至少一篇学术文献（paper），以简要评论并分享推荐的方式打卡。期望通过互相监督，收获个人与社群的共同成长。</view>
   </view>
   <view class="section">
     <text class="section-title">群规则</text>
+    <text class="paragraph">我们是一个学术交流社群，目前以微信群形式组织并开展活动，社群成员要求每月至少读一篇学术文献（paper）并打卡，期望以这种互相监督的形式，收获个人与社群的共同成长。</text>
+    <text class="paragraph">如需进群，请与我联系（微信号：yanlinlin82，备注：申请进群读paper），并提前了解如下群规则。</text>
     <text class="section-content" user-select="true">
       <text class="paragraph">1. 本群为学术交流群。群内禁止广告，禁止发表不当言论，不遵守规则者一律踢出。</text>
       <text class="paragraph">2. 各位入群后，除首月可豁免外，每月应至少读完 1 篇paper，专业领域不限，并且撰写推荐理由、评论或解读，发布在群里进行打卡。未按时完成打卡者，将被移出群，每月1日执行检查和清理。群员也可自行退群，不影响交情。离群至少一个月后方可重新申请入群。</text>

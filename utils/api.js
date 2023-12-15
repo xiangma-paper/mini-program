@@ -18,19 +18,46 @@ function wxLogin(callback) {
   })
 }
 
-function updateNickname(csrfToken, token, nickname, callback) {
-  console.log('csrfToken:', csrfToken)
-  console.log('token', token)
-  console.log('nickname:', nickname)
+function updateNickname(nickname, callback) {
   wx.request({
     url: app.host + '/api/update_nickname',
     method: 'POST',
     header: {
       'content-type': 'application/json',
-      'X-CSRFToken': csrfToken,  // Set CSRF token in the header
-      'Cookie': 'csrftoken=' + csrfToken  // Include CSRF token in the cookies
+      'X-CSRFToken': app.csrfToken,
+      'Cookie': 'csrftoken=' + app.csrfToken
     },
-    data: {token: token, nickname: nickname},
+    data: {token: app.token, nickname: nickname},
+    success: res => callback(null, res),
+    fail: error => callback(error)
+  })
+}
+
+function fetchPaperList(callback) {
+  wx.request({
+    url: app.host + '/api/fetch_paper_list',
+    method: 'POST',
+    header: {
+      'content-type': 'application/json',
+      'X-CSRFToken': app.csrfToken,
+      'Cookie': 'csrftoken=' + app.csrfToken
+    },
+    data: {token: app.token},
+    success: res => callback(null, res),
+    fail: error => callback(error)
+  })
+}
+
+function fetchRankList(callback) {
+  wx.request({
+    url: app.host + '/api/fetch_rank_list',
+    method: 'POST',
+    header: {
+      'content-type': 'application/json',
+      'X-CSRFToken': app.csrfToken,
+      'Cookie': 'csrftoken=' + app.csrfToken
+    },
+    data: {token: app.token},
     success: res => callback(null, res),
     fail: error => callback(error)
   })
@@ -38,5 +65,7 @@ function updateNickname(csrfToken, token, nickname, callback) {
 
 module.exports = {
   wxLogin,
-  updateNickname
+  updateNickname,
+  fetchPaperList,
+  fetchRankList
 }

@@ -1,5 +1,5 @@
 .container {
-  margin-top: 60rpx;
+  margin-top: 20rpx;
 }
 
 .content {
@@ -11,8 +11,15 @@
   padding: 0;
 }
 
+.welcome {
+  font-size: 60rpx;
+  text-align: center;
+  border-bottom: 1px solid darkgray;
+}
+
 .notice {
-  border: none;
+  font-size: 28rpx;
+  border-bottom: 1px solid darkgray;
 }
 
 .paragraph {
@@ -44,11 +51,10 @@
   border: 1px solid red;
 }
 
-.button {
+.my-button {
   background-color: #007aff;
   color: #fff;
   border-radius: 5rpx;
   font-weight: normal;
   font-size: 30rpx;
-  width: 120rpx;
 }
