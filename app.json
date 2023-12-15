@@ -4,8 +4,7 @@
     "pages/checkin/checkin",
     "pages/rank/rank",
     "pages/papers/papers",
-    "pages/about/about",
-    "pages/add/add"
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",

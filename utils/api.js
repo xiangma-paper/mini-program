@@ -63,9 +63,48 @@ function fetchRankList(callback) {
   })
 }
 
+function fetchPaperInfo(paperId, callback) {
+  wx.request({
+    url: app.host + '/api/fetch_paper_info',
+    method: 'POST',
+    header: {
+      'content-type': 'application/json',
+      'X-CSRFToken': app.csrfToken,
+      'Cookie': 'csrftoken=' + app.csrfToken
+    },
+    data: {token: app.token, paper_id: paperId},
+    success: res => callback(null, res),
+    fail: error => callback(error)
+  })
+}
+
+function submitComment(paperId, title, journal, pubYear, comment, callback) {
+  wx.request({
+    url: app.host + '/api/submit_comment',
+    method: 'POST',
+    header: {
+      'content-type': 'application/json',
+      'X-CSRFToken': app.csrfToken,
+      'Cookie': 'csrftoken=' + app.csrfToken
+    },
+    data: {
+      token: app.token,
+      paper_id: paperId,
+      title: title,
+      journal: journal,
+      pub_year: pubYear,
+      comment: comment
+    },
+    success: res => callback(null, res),
+    fail: error => callback(error)
+  })
+}
+
 module.exports = {
   wxLogin,
   updateNickname,
   fetchPaperList,
-  fetchRankList
+  fetchRankList,
+  fetchPaperInfo,
+  submitComment,
 }

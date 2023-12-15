@@ -1,34 +1,25 @@
 <view class="container">
-  <view class="group-box">
-    <view class="group-box-title">新建打卡分享</view>
-    <view class="form-row">
-      <input id="paper-id-input" class="input" placeholder="请输入DOI/PMID/PMCID/arXivID" bindinput="onPaperIdChanged" value="{{paperId}}"/>
-      <button class="search-btn" style="width: 132rpx; height: 64rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" bind:tap="onSearch">搜索</button>
-    </view>
-    <view class="instruction">若无文献ID，可直接点击“搜索”按钮进入手动填写界面</view>
+  <view class="flex-row">
+    <input id="paper_id" placeholder="DOI/PMID/PMCID/arXivID" value="{{paperId}}" bindinput="onPaperIdInput"/>
+    <button class="attached-button" bind:tap="onFetch">提取信息</button>
   </view>
-  <view class="result-list">
-    <view class="group-box-title">已完成打卡分享</view>
-    <block wx:if="{{papers.length > 0}}">
-      <block wx:for="{{papers}}" wx:key="index">
-        <view class="result-item">
-          <view class="create-time">{{item.create_time}}</view>
-          <view class="title">{{item.title}}</view>
-          <view class="paper-info">
-            <text>{{item.pub_year}}, {{item.journal}}</text>
-            <text wx:if="{{item.doi}}">. doi: {{item.doi}}</text>
-            <text wx:if="{{item.pmid}}">. PMID: {{item.pmid}}</text>
-            <text wx:if="{{item.arxiv_id}}">. arXiv ID: {{item.arxiv_id}}</text>
-            <text wx:if="{{item.pmcid}}">. PMCID: {{item.pmcid}}</text>
-          </view>
-          <view class="comment">{{item.comments}}</view>
-        </view>
-      </block>
-    </block>
-    <block wx:else>
-      <view class="no-data-box">
-        目前尚无任何打卡分享内容。
-      </view>
-    </block>
+  <view class="flex-row">
+    <label>标题</label>
+    <input id="title" value="{{title}}" bindinput="onTitleInput"/>
+  </view>
+  <view class="flex-row">
+    <label>杂志</label>
+    <input id="journal" value="{{journal}}" bindinput="onJournalInput"/>
+  </view>
+  <view class="flex-row">
+    <label>年份</label>
+    <input id="pub_year" value="{{pubYear}}" bindinput="onPubYearInput"/>
+  </view>
+  <view class="textarea-row">
+    <label>简评</label>
+    <textarea id="comment" value="{{comment}}" bindinput="onCommentInput"/>
+  </view>
+  <view class="submit-row">
+    <button bind:tap="onCheckIn">打卡</button>
   </view>
 </view>

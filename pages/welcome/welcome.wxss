@@ -1,14 +1,10 @@
 .container {
   margin-top: 20rpx;
-}
-
-.content {
   padding: 40rpx;
 }
 
 .section {
   margin-bottom: 40rpx;
-  padding: 0;
 }
 
 .welcome {

@@ -13,7 +13,7 @@ Page({
     wx.showLoading({title: '正在载入……', mask: true})
     api.wxLogin((error, res) => {
       if (error) {
-        wx.showToast({title: '登录失败', icon: 'none'})
+        wx.showToast({title: '载入失败', icon: 'none'})
         console.error('Login failed:', error)
       } else {
         console.log('Login success:', res)
@@ -51,8 +51,9 @@ Page({
       this.setData({isNicknameError: false})
       wx.showLoading({title: '正在登录……', mask: true})
       api.updateNickname(this.data.nickname, (error, res) => {
-        wx.hideLoading();
+        wx.hideLoading()
         if (error) {
+          wx.showToast({title: '登录失败', icon: 'none'})
         } else {
           this.gotoNextPage();
         }
