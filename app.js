@@ -3,4 +3,5 @@ App({
   //host: 'https://paper-hub.cn',
   token: '',
   csrfToken: '',
+  nickname: '',
 })

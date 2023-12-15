@@ -7,10 +7,12 @@ Page({
     title: '',
     journal: '',
     pubYear: '',
+    nickname: '',
     comment: '',
   },
   onLoad: function() {
     console.log('checkin.onLoad()')
+    this.setData({nickname: app.nickname})
   },
   onPaperIdInput: function(e) {
     this.setData({paperId: e.detail.value})
@@ -23,6 +25,9 @@ Page({
   },
   onPubYearInput: function(e) {
     this.setData({pubYear: e.detail.value})
+  },
+  onNicknameInput: function(e) {
+    this.setData({nickname: e.detail.value})
   },
   onCommentInput: function(e) {
     this.setData({comment: e.detail.value})
@@ -46,12 +51,13 @@ Page({
   },
   onCheckIn: function() {
     console.log('onCheckIn:')
-    wx.showLoading({title: '正在查询……', mask: true})
+    wx.showLoading({title: '正在打卡……', mask: true})
     api.submitComment(
       this.data.paperId,
       this.data.title,
       this.data.journal,
       this.data.pubYear,
+      this.data.nickname,
       this.data.comment,
       (error, res) => {
       wx.hideLoading()
@@ -59,9 +65,10 @@ Page({
         wx.showToast({title: '打卡失败', icon: 'none'})
       } else {
         console.log('res:', res)
-        wx.showToast({
-          title: '提交成功', icon: 'none',
-        })
+        wx.showToast({title: '打卡成功', icon: 'none'})
+        if (this.data.nickname != app.nickname) {
+          app.nickname = this.data.nickname
+        }
         this.setData({
           paperId: '',
           title: '',

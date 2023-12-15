@@ -23,7 +23,8 @@ Page({
           wx.setStorage({key: 'token', data: res.data.token})
           wx.setStorage({key: 'csrfToken', data: res.data.csrfToken})
           if (res.data.nickname != '') {
-            this.gotoNextPage();
+            app.nickname = res.data.nickname
+            this.gotoNextPage()
           }
         }
       }
@@ -55,12 +56,13 @@ Page({
         if (error) {
           wx.showToast({title: '登录失败', icon: 'none'})
         } else {
-          this.gotoNextPage();
+          app.nickname = this.data.nickname
+          this.gotoNextPage()
         }
       });
     }
   },
   gotoNextPage: function() {
-    wx.switchTab({url: '/pages/checkin/checkin'});
+    wx.switchTab({url: '/pages/checkin/checkin'})
   }
 })

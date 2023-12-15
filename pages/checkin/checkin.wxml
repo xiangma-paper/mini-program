@@ -1,23 +1,31 @@
 <view class="container">
-  <view class="flex-row">
-    <input id="paper_id" placeholder="DOI/PMID/PMCID/arXivID" value="{{paperId}}" bindinput="onPaperIdInput"/>
-    <button class="attached-button" bind:tap="onFetch">提取信息</button>
+  <view class="section">
+    <view class="flex-row">
+      <input id="paper_id" placeholder="DOI/PMID/PMCID/arXivID" value="{{paperId}}" bindinput="onPaperIdInput"/>
+      <button class="attached-button" bind:tap="onFetch">提取信息</button>
+    </view>
+    <view class="flex-row">
+      <label>标题</label>
+      <input id="title" value="{{title}}" bindinput="onTitleInput"/>
+    </view>
+    <view class="flex-row">
+      <label>杂志</label>
+      <input id="journal" value="{{journal}}" bindinput="onJournalInput"/>
+    </view>
+    <view class="flex-row">
+      <label>年份</label>
+      <input id="pub_year" value="{{pubYear}}" bindinput="onPubYearInput"/>
+    </view>
   </view>
-  <view class="flex-row">
-    <label>标题</label>
-    <input id="title" value="{{title}}" bindinput="onTitleInput"/>
-  </view>
-  <view class="flex-row">
-    <label>杂志</label>
-    <input id="journal" value="{{journal}}" bindinput="onJournalInput"/>
-  </view>
-  <view class="flex-row">
-    <label>年份</label>
-    <input id="pub_year" value="{{pubYear}}" bindinput="onPubYearInput"/>
-  </view>
-  <view class="textarea-row">
-    <label>简评</label>
-    <textarea id="comment" value="{{comment}}" bindinput="onCommentInput"/>
+  <view class="section">
+    <view class="flex-row">
+      <label>昵称</label>
+      <input type="nickname" id="nickname" value="{{nickname}}" bindinput="onNicknameInput"/>
+    </view>
+    <view class="textarea-row">
+      <label>简评</label>
+      <textarea id="comment" value="{{comment}}" bindinput="onCommentInput"/>
+    </view>
   </view>
   <view class="submit-row">
     <button bind:tap="onCheckIn">打卡</button>

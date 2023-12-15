@@ -14,7 +14,7 @@
       <label>昵称：</label>
       <input type="nickname" id="nickname" placeholder="请输入昵称" value="{{nickname}}" class="{{isNicknameError ? 'input-error' : 'input-ok'}}" focus="{{inputFocus}}" bindinput="onNicknameInput"/>
     </view>
-    <view class="tip">社群不强制要求实名，但建议与微信群昵称保持一致。</view>
+    <view class="tip">社群不强制要求实名，但建议与微信群昵称保持一致。此处填写的昵称，可以在后续打卡时进行更改。</view>
   </view>
   <view class="section">
     <button class="my-button" bind:tap="onEnter">进入</button>

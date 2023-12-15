@@ -2,6 +2,13 @@
   padding: 40rpx;
 }
 
+.section {
+  margin-bottom: 30rpx;
+  border: 1px solid darkgray;
+  border-radius: 20rpx;
+  padding: 30rpx 20rpx 10rpx 20rpx;
+}
+
 input {
   border: 1px solid darkgray;
   height: 60rpx;
@@ -9,7 +16,7 @@ input {
 
 textarea {
   border: 1px solid darkgray;
-  height: 480rpx;
+  height: 320rpx;
   width: 100%;
 }
 
@@ -39,6 +46,11 @@ textarea {
 
 .textarea-row {
   margin-bottom: 20rpx;
+}
+
+.submit-row {
+  display: block;
+  text-align: center;
 }
 
 .submit-row button {

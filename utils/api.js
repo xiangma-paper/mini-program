@@ -78,7 +78,7 @@ function fetchPaperInfo(paperId, callback) {
   })
 }
 
-function submitComment(paperId, title, journal, pubYear, comment, callback) {
+function submitComment(paperId, title, journal, pubYear, nickname, comment, callback) {
   wx.request({
     url: app.host + '/api/submit_comment',
     method: 'POST',
@@ -93,6 +93,7 @@ function submitComment(paperId, title, journal, pubYear, comment, callback) {
       title: title,
       journal: journal,
       pub_year: pubYear,
+      nickname: nickname,
       comment: comment
     },
     success: res => callback(null, res),
