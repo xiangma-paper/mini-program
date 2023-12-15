@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/checkin/checkin",
     "pages/rank/rank",
     "pages/papers/papers",

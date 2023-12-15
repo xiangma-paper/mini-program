@@ -1,0 +1,54 @@
+.container {
+  margin-top: 60rpx;
+}
+
+.content {
+  padding: 40rpx;
+}
+
+.section {
+  margin-bottom: 40rpx;
+  padding: 0;
+}
+
+.notice {
+  border: none;
+}
+
+.paragraph {
+  margin-bottom: 20rpx;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center; /* align vertically */
+}
+.flex-row label {
+  width: 100rpx;
+}
+.flex-row input {
+  flex-grow: 1;
+}
+
+.tip {
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  font-size: small;
+  color: #999;
+}
+
+.input-ok {
+  border: 1px solid darkgray;
+}
+.input-error {
+  border: 1px solid red;
+}
+
+.button {
+  background-color: #007aff;
+  color: #fff;
+  border-radius: 5rpx;
+  font-weight: normal;
+  font-size: 30rpx;
+  width: 120rpx;
+}

@@ -1,0 +1,3 @@
+view, text, button, scroll-view, swiper, image, input, textarea, radio, checkbox, picker, navigator, icon, progress, rich-text {
+  box-sizing: border-box;
+}

@@ -1,0 +1,21 @@
+
+<view class="container" wx:if="{{!isLoading}}">
+  <view class="content">
+    <view class="section">
+      <view class="notice">
+        <view class="paragraph">“响马读paper”是一个学术社群。每位社群成员每月应读至少一篇学术文献（paper），以简要评论并分享推荐的方式打卡。期望通过互相监督，收获个人与社群的共同成长。</view>
+        <view class="paragraph">这是社群专用小程序。首次使用，请输入个人昵称，该昵称将用于文献阅读打卡分享内容的公开展示。</view>
+      </view>
+    </view>
+    <view class="section">
+      <view class="flex-row">
+        <label>昵称：</label>
+        <input type="nickname" id="nickname" placeholder="请输入昵称" value="{{nickname}}" class="{{isNicknameError ? 'input-error' : 'input-ok'}}" focus="{{inputFocus}}" bindinput="onNicknameInput"/>
+      </view>
+      <view class="tip">社群不强制要求实名，建议与微信群名保持一致。</view>
+    </view>
+    <view class="section">
+      <button class="button" bind:tap="onEnter">进入</button>
+    </view>
+  </view>
+</view>
