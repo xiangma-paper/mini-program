@@ -1,12 +1,4 @@
 <view class="container">
-  <view class="user-info">
-    <view class="form-row">
-      <label class="nickname-label">昵称：</label>
-      <input id="nickname-input" class="nickname-input" style="{{nicknameInputStyle}}" type="nickname" placeholder="请输入昵称" value="{{nickname}}" bindinput="onNicknameChanged" bindfocus="onNicknameFocus"/>
-      <button class="nickname-btn" style="{{nicknameButtonStyle}}" bind:tap="onNicknameSubmit">修改</button>
-    </view>
-    <view class="instruction" style="{{nicknameButtonStyle}}">社群不强制要求实名，建议与微信群名保持一致。可以在此设置昵称，该昵称将用于公开展示打卡分享内容</view>
-  </view>
   <view class="group-box">
     <view class="group-box-title">新建打卡分享</view>
     <view class="form-row">

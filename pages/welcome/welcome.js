@@ -5,7 +5,9 @@ Page({
     isLoading: true,
     nickname: '',
     isNicknameError: false,
-    inputFocus: false
+    inputFocus: false,
+    token: '',
+    csrfToken: '',
   },
   onLoad: function() {
     wx.showLoading({title: '正在载入……', mask: true})
@@ -16,7 +18,15 @@ Page({
       } else {
         console.log('Login success:', res);
         if (res.data.success) {
-          this.setData({nickname: res.data.nickname});
+          this.setData({
+            token: res.data.token,
+            csrfToken: res.data.csrfToken
+          })
+          wx.setStorage({key: 'token', data: res.data.token})
+          wx.setStorage({key: 'csrfToken', data: res.data.csrfToken})
+          if (res.data.nickname != '') {
+            this.gotoNextPage();
+          }
         }
       }
       this.setData({isLoading: false});
@@ -41,8 +51,17 @@ Page({
   onEnter: function() {
     if (this.validateNickname()) {
       this.setData({isNicknameError: false})
-      console.log("Nickname: ", this.data.nickname);
-      // Proceed with further actions
+      wx.showLoading({title: '正在登录……', mask: true})
+      api.updateNickname(this.data.csrfToken, this.data.token, this.data.nickname, (error, res) => {
+        wx.hideLoading();
+        if (error) {
+        } else {
+          this.gotoNextPage();
+        }
+      });
     }
+  },
+  gotoNextPage: function() {
+    wx.switchTab({url: '/pages/checkin/checkin'});
   }
 })

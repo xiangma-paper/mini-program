@@ -4,45 +4,9 @@
   padding: 20rpx;
 }
 
-.user-info {
-  padding: 20rpx;
-}
-
 .form-row {
   display: flex;
   align-items: center;
-}
-
-.user-info .nickname-label {
-  width: 100rpx;
-}
-
-.user-info .nickname-input {
-  flex: 1;
-  border-bottom: 1px darkgray solid;
-}
-
-.user-info .nickname-btn {
-  display: block;
-  box-sizing: border-box;
-  width: 120rpx;
-  height: 64rpx;
-  left: 0rpx;
-  top: 0rpx;
-  background-color: #007aff;
-  color: #fff;
-  padding: 10rpx;
-  border: none;
-  border-radius: 5rpx;
-  margin-left: 10rpx;
-  font-size: 30rpx;
-  font-weight: normal;
-}
-
-.instruction {
-  margin-top: 10rpx;
-  font-size: small;
-  color: #999;
 }
 
 .group-box {
