@@ -8,7 +8,15 @@ Page({
     tables: []
   },
   onLoad: function () {
-    console.log('checkin.onLoad()')
+    console.log('rank.onLoad()')
+    this.refreshPage()
+  },
+  onPullDownRefresh: function() {
+    console.log('rank.onPullDownRefresh()')
+    this.refreshPage()
+    wx.stopPullDownRefresh();
+  },
+  refreshPage: function() {
     api.fetchRankList((error, res) => {
       if (error) {
         wx.showToast({title: '载入榜单失败', icon: 'none'})

@@ -7,6 +7,14 @@ Page({
   },
   onLoad: function() {
     console.log('papers.onLoad()')
+    this.refreshPage()
+  },
+  onPullDownRefresh: function() {
+    console.log('papers.onPullDownRefresh()')
+    this.refreshPage()
+    wx.stopPullDownRefresh();
+  },
+  refreshPage: function() {
     api.fetchPaperList((error, res) => {
       if (error) {
         wx.showToast({title: '载入文献列表失败', icon: 'none'})
