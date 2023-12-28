@@ -1,32 +1,29 @@
-<view class="container" user-select="true">
-  <view class="title">
+<view class="container">
+  <text class="title" user-select="true">
     <text user-select="true">响马读paper</text>
-  </view>
-  <view class="slogan">
+  </text>
+  <text class="slogan" user-select="true">
     <text user-select="true">坚持读paper，一起精进60年。</text>
-  </view>
-  <view class="section">
-    <view class="section-title">简介</view>
-    <view class="paragraph">“响马读paper”是一个学术社群。每位社群成员每月应读至少一篇学术文献（paper），以简要评论并分享推荐的方式打卡。期望通过互相监督，收获个人与社群的共同成长。</view>
-  </view>
-  <view class="section">
+  </text>
+  <text class="section" user-select="true">
+    <text class="section-title">简介</text>
+    <text class="paragraph">“响马读paper”是一个学术社群。社群成员每月应阅读至少一篇学术文献（paper），并以简评分享形式打卡。期望通过这种互相监督学习，收获个人与社群的共同成长。</text>
+      <text class="paragraph">这是社群专用小程序。目前为试运营阶段，主要用于文献评论分享打卡。后续将围绕社群运营，推出更多功能。</text>
+  </text>
+  <text class="section" user-select="true">
     <text class="section-title">群规则</text>
-    <text class="paragraph">我们是一个学术交流社群，目前以微信群形式组织并开展活动，社群成员要求每月至少读一篇学术文献（paper）并打卡，期望以这种互相监督的形式，收获个人与社群的共同成长。</text>
-    <text class="paragraph">如需进群，请与我联系（微信号：yanlinlin82，备注：申请进群读paper），并提前了解如下群规则。</text>
-    <text class="section-content" user-select="true">
-      <text class="paragraph">1. 本群为学术交流群。群内禁止广告，禁止发表不当言论，不遵守规则者一律踢出。</text>
-      <text class="paragraph">2. 各位入群后，除首月可豁免外，每月应至少读完 1 篇paper，专业领域不限，并且撰写推荐理由、评论或解读，发布在群里进行打卡。未按时完成打卡者，将被移出群，每月1日执行检查和清理。群员也可自行退群，不影响交情。离群至少一个月后方可重新申请入群。</text>
-      <text class="paragraph">3. 打卡务必以“#paper”开头，否则可能在统计时发生遗漏。推荐采取格式“#paper doi:xxxxx 杂志, 年份, 标题。推荐理由。”比如：“#paper doi:10.1038/171737a0 Nature, 1953, Molecular structure of nucleic acids; a structure for deoxyribose nucleic acid。DNA双螺旋发现的经典论文。”没有doi的paper，可以改用其它唯一标识（如ArXivID、PMID或PMCID），但需注明，便于他人找到该论文。</text>
-      <text class="paragraph">4. 论文不限领域，只要是正式发表（含预发表）的学术论文都可以算。打卡分享内容，除要求符合（#paper开头）格式外，详细内容及质量不做要求限制，其观点也仅代表分享者个人。欢迎大家在群里发散讨论。</text>
-      <text class="paragraph">5. 查看群友推荐paper的方法，除在聊天记录中搜索“#paper”关键字外，也可通过本群配套网站（<text class="link">https://paper-hub.cn/group/xiangma/</text>）进行浏览和查看。该网站目前暂时采取手工同步方式，故更新时间可能有延迟。</text>
-      <text class="paragraph">6. 网站链接 <text class="link">https://paper-hub.cn/group/xiangma/stat/this_month</text> 可显示本月已打卡情况及排名。该网站在未来会配合社群发展，逐步完善各类功能，欢迎提出相关建议和意见。</text>
-      <text class="paragraph">7. 本群鼓励学术自由交流，鼓励不同专业人士分享各自领域论文，鼓励不同学科之间的碰撞和讨论，但应遵循基本的科学原则和精神，避免伪科学，避免人身攻击，有违反者经警告无效则踢出。</text>
-      <text class="paragraph">8. 本群不强制要求实名，但为确保打卡统计正确，请避免反复更改昵称。如有更改，导致统计失效，请与群主联系解决。</text>
-      <text class="paragraph">9. 群名“响马”就是你以为的那个“响马”之意，读paper、搞学术、做学问，都要有敢于质疑、敢于不拘一格的匪气，敢于挑战自己，对自己狠一些。</text>
-      <text class="paragraph">10. 本群成立于2022年1月8日。本群目标：坚持读paper，一起精进60年。</text>
-    </text>
-  </view>
-  <view class="footer">
+    <text class="paragraph">1. 社群目前使用微信群形式组织并开展活动。如需进群，请与我联系（微信号：yanlinlin82，备注：申请进群读paper）</text>
+    <text class="paragraph">2. 入群后，除首月可豁免外，每月应至少读完 1 篇paper，专业领域不限，并且撰写推荐理由、评论或解读，发到微信群里（后续将改为使用小程序打卡，功能尚在测试中）。</text>
+    <text class="paragraph">3. 发到微信群的打卡信息，应以“#paper”开头，以方便查询和记录。推荐采取格式“#paper doi:xxxxx 杂志, 年份, 标题。推荐理由。”比如：“#paper doi:10.1038/171737a0 Nature, 1953, Molecular structure of nucleic acids; a structure for deoxyribose nucleic acid。DNA双螺旋发现的经典论文。”（将来如果能完全使用小程序打卡，则可以不用这么麻烦）</text>
+    <text class="paragraph">4. 每月1日凌晨0点，会严格执行微信群清理，移出上月未按要求完成打卡者。群员也可自行退群，不影响交情。离群至少一个月后方可重新申请入群。</text>
+    <text class="paragraph">5. 论文不限领域，只要是正式发表（含预发表）的学术论文都可以算。请尽量写清杂志名、年份和论文标题，并提供正式发表的doi，以方便他人查看并追溯原文学习。没有doi的paper，可以改用其它唯一标识（如ArXivID、PMID或PMCID）。</text>
+    <text class="paragraph">6. 打卡分享的内容，将会公开展示，其观点仅代表发布者本人。可将此视作一个展示自己专业水平和态度的机会。</text>
+    <text class="paragraph">7. 鼓励学术自由交流，鼓励不同专业人士分享各自领域论文，鼓励不同学科之间的碰撞和讨论，但应遵循基本的科学原则和精神，避免伪科学，避免人身攻击。</text>
+    <text class="paragraph">8. 社群不强制要求实名，但实名有利于个人品牌建设，群友不妨考虑考虑。</text>
+    <text class="paragraph">9. 群名“响马”就是你以为的那个“响马”之意，读paper、搞学术、做学问，都要有敢于质疑、敢于不拘一格的匪气，敢于挑战自己，对自己狠一些。</text>
+    <text class="paragraph">10. 本群成立于2022年1月8日。本群目标：坚持读paper，一起精进60年。</text>
+  </text>
+  <view class="footer" user-select="true">
     <text>京ICP备18031542号-10X</text>
   </view>
 </view>
