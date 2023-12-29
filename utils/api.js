@@ -1,4 +1,4 @@
-const app = getApp();
+const app = getApp()
 
 function wxLogin(callback) {
   wx.login({
