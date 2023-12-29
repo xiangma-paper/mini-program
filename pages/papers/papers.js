@@ -19,9 +19,11 @@ Page({
     wx.stopPullDownRefresh();
   },
   refreshPage: function() {
+    wx.showLoading({title: '正在查询文献列表……', mask: true})
     api.fetchPaperList((error, res) => {
+      wx.hideLoading()
       if (error) {
-        wx.showToast({title: '载入文献列表失败', icon: 'none'})
+        wx.showToast({title: '查询文献列表失败', icon: 'none'})
         console.error('Fetch paper list failed:', error)
       } else {
         this.setData({tables: res.data.results})

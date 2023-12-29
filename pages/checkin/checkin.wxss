@@ -35,10 +35,8 @@ textarea {
 .attached-button {
   flex: 0 0 160rpx;
   padding: 10rpx;
-  background-color: #007aff;
+  background-color: #00a000;
   color: #fff;
-  width: 80rpx;
-  height: 60rpx;
   border-radius: 5rpx;
   font-weight: normal;
   font-size: 28rpx;
@@ -53,11 +51,10 @@ textarea {
   text-align: center;
 }
 
-.submit-row button {
-  background-color: #007aff;
+.flex-row button#submit {
+  flex: 0 0 160rpx;
+  background-color: #00a000;
   color: #fff;
-  width: 120rpx;
-  height: 80rpx;
   padding: 15rpx;
   border-radius: 5rpx;
   font-weight: normal;

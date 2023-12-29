@@ -27,7 +27,7 @@
       <textarea id="comment" value="{{comment}}" bindinput="onCommentInput"/>
     </view>
   </view>
-  <view class="submit-row">
-    <button bind:tap="onCheckIn">打卡</button>
+  <view class="flex-row">
+    <button id="submit" bind:tap="onCheckIn">打卡</button>
   </view>
 </view>

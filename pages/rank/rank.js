@@ -21,9 +21,11 @@ Page({
     wx.stopPullDownRefresh();
   },
   refreshPage: function() {
+    wx.showLoading({title: '正在查询榜单……', mask: true})
     api.fetchRankList((error, res) => {
+      wx.hideLoading()
       if (error) {
-        wx.showToast({title: '载入榜单失败', icon: 'none'})
+        wx.showToast({title: '查询榜单失败', icon: 'none'})
         console.error('Fetch rank list failed:', error)
       } else {
         console.log(res)
