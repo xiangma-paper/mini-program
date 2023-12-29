@@ -9,6 +9,10 @@ Page({
     console.log('papers.onLoad()')
     this.refreshPage()
   },
+  onShow: function() {
+    console.log('papers.onShow()')
+    this.refreshPage()
+  },
   onPullDownRefresh: function() {
     console.log('papers.onPullDownRefresh()')
     this.refreshPage()

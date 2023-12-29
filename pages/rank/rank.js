@@ -11,6 +11,10 @@ Page({
     console.log('rank.onLoad()')
     this.refreshPage()
   },
+  onShow: function() {
+    console.log('rank.onShow()')
+    this.refreshPage()
+  },
   onPullDownRefresh: function() {
     console.log('rank.onPullDownRefresh()')
     this.refreshPage()
