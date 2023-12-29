@@ -23,7 +23,6 @@ Page({
   refreshPage: function() {
     wx.showLoading({title: '正在查询榜单……', mask: true})
     api.fetchRankList((error, res) => {
-      wx.hideLoading()
       if (error) {
         wx.showToast({title: '查询榜单失败', icon: 'none'})
         console.error('Fetch rank list failed:', error)
@@ -31,6 +30,7 @@ Page({
         console.log(res)
         this.setData({tables: res.data.results})
       }
+      wx.hideLoading()
     })
   },
   switchTab: function (event) {

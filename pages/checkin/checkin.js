@@ -60,23 +60,23 @@ Page({
       this.data.nickname,
       this.data.comment,
       (error, res) => {
-      wx.hideLoading()
-      if (error) {
-        wx.showToast({title: '打卡失败', icon: 'none'})
-      } else {
-        console.log('res:', res)
-        wx.showToast({title: '打卡成功', icon: 'none'})
-        if (this.data.nickname != app.nickname) {
-          app.nickname = this.data.nickname
+        if (error) {
+          wx.showToast({title: '打卡失败', icon: 'none'})
+        } else {
+          console.log('res:', res)
+          wx.showToast({title: '打卡成功', icon: 'none'})
+          if (this.data.nickname != app.nickname) {
+            app.nickname = this.data.nickname
+          }
+          this.setData({
+            paperId: '',
+            title: '',
+            journal: '',
+            pubYear: '',
+            comment: ''
+          })
         }
-        this.setData({
-          paperId: '',
-          title: '',
-          journal: '',
-          pubYear: '',
-          comment: ''
-        })
-      }
-    })
+        wx.hideLoading()
+      })
   }
 })
