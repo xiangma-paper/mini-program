@@ -13,22 +13,33 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#00c000",
+    "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/checkin/checkin",
-        "text": "打卡"
+        "text": "打卡",
+        "iconPath": "images/1-checkin.png",
+        "selectedIconPath": "images/1-checkin-active.png"
       },
       {
         "pagePath": "pages/papers/papers",
-        "text": "文献"
+        "text": "文献",
+        "iconPath": "images/2-papers.png",
+        "selectedIconPath": "images/2-papers-active.png"
       },
       {
         "pagePath": "pages/rank/rank",
-        "text": "榜单"
+        "text": "榜单",
+        "iconPath": "images/3-rank.png",
+        "selectedIconPath": "images/3-rank-active.png"
       },
       {
         "pagePath": "pages/about/about",
-        "text": "社群"
+        "text": "社群",
+        "iconPath": "images/4-about.png",
+        "selectedIconPath": "images/4-about-active.png"
       }
     ]
   },
