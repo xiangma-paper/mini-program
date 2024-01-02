@@ -5,7 +5,7 @@
 </view>
 <view class="panel">
   <block wx:for="{{tables}}" wx:key="index">
-    <view class="{{index === currentTab ? 'weui-tab__content_show' : 'weui-tab__content'}}">
+    <view class="{{index === currentTab ? 'panel-show' : 'panel-hide'}}">
       <view class="table">
         <view class="row header">
           <block wx:for="{{tables[index].columns}}" wx:key="index2">

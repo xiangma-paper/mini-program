@@ -19,6 +19,14 @@
   font-weight: bold;
 }
 
+.panel-show {
+  display: block;
+}
+
+.panel-hide {
+  display: none;
+}
+
 .table {
   font-size: 12px;
   width: 100%;

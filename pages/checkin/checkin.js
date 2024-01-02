@@ -12,7 +12,8 @@ Page({
   },
   onLoad: function() {
     console.log('checkin.onLoad()')
-    this.setData({nickname: app.nickname})
+    let nickname = wx.getStorageSync('nickname')
+    this.setData({nickname: nickname})
   },
   onPaperIdInput: function(e) {
     this.setData({paperId: e.detail.value})
