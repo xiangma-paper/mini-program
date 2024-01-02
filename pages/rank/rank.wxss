@@ -1,7 +1,22 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+}
+
 .rank-tab {
   font-size: 12px;
   margin: 0 auto;
   padding: 5px 0;
+  flex-grow: 1;
+  text-align: center;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  border: 1px solid darkgray;
+}
+
+.tab-on {
+  background-color: lightgreen;
+  font-weight: bold;
 }
 
 .table {
@@ -10,6 +25,7 @@
   border-collapse: collapse;
   border: 1px solid darkgray;
 }
+
 .row {
   display: flex;
   flex-direction: row;
@@ -17,9 +33,10 @@
   align-items: center;
   border-top: 1px solid darkgray;
 }
+
 .header {
   font-weight: bold;
-  background-color: #f0f0f0;
+  background-color: #ffffcc;
 }
 .cell {
   padding: 8px;

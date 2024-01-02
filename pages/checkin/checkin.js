@@ -64,19 +64,26 @@ Page({
           wx.showToast({title: '打卡失败', icon: 'none'})
         } else {
           console.log('res:', res)
-          wx.showToast({title: '打卡成功', icon: 'none'})
-          if (this.data.nickname != app.nickname) {
-            app.nickname = this.data.nickname
-          }
-          this.setData({
-            paperId: '',
-            title: '',
-            journal: '',
-            pubYear: '',
-            comment: ''
+          wx.showModal({
+            title: '打卡成功',
+            content: this.data.title + '\n' + this.data.comment,
+            showCancel: false,
+            complete: (res) => {
+              if (res.confirm) {
+                if (this.data.nickname != app.nickname) {
+                  app.nickname = this.data.nickname
+                }
+                this.setData({
+                  paperId: '',
+                  title: '',
+                  journal: '',
+                  pubYear: '',
+                  comment: ''
+                })
+              }
+            }
           })
         }
-        wx.hideLoading()
       })
   }
 })

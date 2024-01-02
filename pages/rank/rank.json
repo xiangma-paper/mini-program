@@ -3,9 +3,5 @@
   "backgroundTextStyle": "dark",
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
-  "usingComponents": {
-    "mp-cells": "weui-miniprogram/cells/cells",
-    "mp-cell": "weui-miniprogram/cell/cell"
-  },
-  "pageOrientation": "auto"
+  "usingComponents": {}
 }
