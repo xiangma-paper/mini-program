@@ -1,6 +1,16 @@
 const app = getApp()
 const api = require('../../utils/api.js')
 
+function makeRequest(url) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: url,
+      success: resolve,
+      fail: reject
+    })
+  })
+}
+
 Page({
   data: {
     isLoading: true,
@@ -11,26 +21,35 @@ Page({
   onLoad: function() {
     console.log('welcome.onLoad()')
     wx.showLoading({title: '正在载入……', mask: true})
-    api.wxLogin((error, res) => {
-      if (error) {
-        wx.showToast({title: '载入失败', icon: 'none'})
-        console.error('Login failed:', error)
-      } else {
-        console.log('Login success:', res)
-        if (res.data.success) {
-          app.token = res.data.token
-          app.csrfToken = res.data.csrfToken
-          wx.setStorage({key: 'token', data: res.data.token})
-          wx.setStorage({key: 'csrfToken', data: res.data.csrfToken})
-          if (res.data.nickname != '') {
-            app.nickname = res.data.nickname
-            this.gotoNextPage()
+
+    makeRequest(app.host + '/api/wx').then(res => {
+      if (res.data.debug) {
+        console.log('switch to DEBUG mode')
+        app.host = app.host_debug
+      }
+    }).finally(() => {
+      console.log('host:', app.host)
+      api.wxLogin((error, res) => {
+        if (error) {
+          wx.showToast({title: '载入失败', icon: 'none'})
+          console.error('Login failed:', error)
+        } else {
+          console.log('Login success:', res)
+          if (res.data.success) {
+            app.token = res.data.token
+            app.csrfToken = res.data.csrfToken
+            wx.setStorage({key: 'token', data: res.data.token})
+            wx.setStorage({key: 'csrfToken', data: res.data.csrfToken})
+            if (res.data.nickname != '') {
+              app.nickname = res.data.nickname
+              this.gotoNextPage()
+            }
           }
         }
-      }
-      this.setData({isLoading: false});
-      wx.hideLoading();
-    });
+        this.setData({isLoading: false})
+        wx.hideLoading()
+      })
+    })
   },
   onNicknameInput: function(e) {
     this.setData({nickname: e.detail.value})
