@@ -8,7 +8,7 @@ function wxLogin(callback) {
           url: app.host + '/api/wx_login',
           method: 'POST',
           data: {code: res.code},
-          success: res => callback(null, res),
+          success: res => callback(undefined, res),
           fail: error => callback(error)
         })
       } else {
@@ -28,7 +28,7 @@ function updateNickname(nickname, callback) {
       'Cookie': 'csrftoken=' + app.csrfToken
     },
     data: {token: app.token, nickname: nickname},
-    success: res => callback(null, res),
+    success: res => callback(undefined, res),
     fail: error => callback(error)
   })
 }
@@ -43,7 +43,7 @@ function fetchPaperList(callback) {
       'Cookie': 'csrftoken=' + app.csrfToken
     },
     data: {token: app.token},
-    success: res => callback(null, res),
+    success: res => callback(undefined, res),
     fail: error => callback(error)
   })
 }
@@ -58,7 +58,7 @@ function fetchRankList(callback) {
       'Cookie': 'csrftoken=' + app.csrfToken
     },
     data: {token: app.token},
-    success: res => callback(null, res),
+    success: res => callback(undefined, res),
     fail: error => callback(error)
   })
 }
@@ -76,7 +76,7 @@ function fetchRankFullList(self, index, callback) {
       'Cookie': 'csrftoken=' + app.csrfToken
     },
     data: {token: app.token, index: index},
-    success: res => callback(self, index, null, res),
+    success: res => callback(self, index, undefined, res),
     fail: error => callback(self, index, error)
   })
 }
@@ -91,7 +91,7 @@ function fetchPaperInfo(paperId, callback) {
       'Cookie': 'csrftoken=' + app.csrfToken
     },
     data: {token: app.token, paper_id: paperId},
-    success: res => callback(null, res),
+    success: res => callback(undefined, res),
     fail: error => callback(error)
   })
 }
@@ -114,7 +114,7 @@ function submitComment(paperId, title, journal, pubYear, nickname, comment, call
       nickname: nickname,
       comment: comment
     },
-    success: res => callback(null, res),
+    success: res => callback(undefined, res),
     fail: error => callback(error)
   })
 }
