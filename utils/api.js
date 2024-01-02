@@ -63,6 +63,24 @@ function fetchRankList(callback) {
   })
 }
 
+function fetchRankFullList(self, index, callback) {
+  console.log('fetchRankFullList')
+  console.log('self:', self)
+  console.log('index:', index)
+  wx.request({
+    url: app.host + '/api/fetch_rank_full_list',
+    method: 'POST',
+    header: {
+      'content-type': 'application/json',
+      'X-CSRFToken': app.csrfToken,
+      'Cookie': 'csrftoken=' + app.csrfToken
+    },
+    data: {token: app.token, index: index},
+    success: res => callback(self, index, null, res),
+    fail: error => callback(self, index, error)
+  })
+}
+
 function fetchPaperInfo(paperId, callback) {
   wx.request({
     url: app.host + '/api/fetch_paper_info',
@@ -106,6 +124,7 @@ module.exports = {
   updateNickname,
   fetchPaperList,
   fetchRankList,
+  fetchRankFullList,
   fetchPaperInfo,
   submitComment,
 }

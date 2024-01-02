@@ -33,6 +33,26 @@ Page({
       wx.hideLoading()
     })
   },
+  onShowFullRank: function(e) {
+    console.log('onShowFullRank', e)
+    console.log(e.currentTarget.dataset.index)
+    const index = e.currentTarget.dataset.index
+    wx.showLoading({title: '正在查询……', mask: true})
+    api.fetchRankFullList(this, index, (self, index, error, res) => {
+      if (error) {
+        wx.showToast({title: '查询榜单失败', icon: 'none'})
+        console.error('Fetch rank list failed:', error)
+      } else {
+        console.log(res)
+        console.log(self)
+        let newTables = self.data.tables
+        console.log('data.tables:', newTables)
+        newTables[index] = res.data.results
+        self.setData({tables: newTables})
+      }
+      wx.hideLoading()
+    })
+  },
   switchTab: function (event) {
     const index = event.currentTarget.dataset.index;
     this.setData({ currentTab: index })

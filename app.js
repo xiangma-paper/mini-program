@@ -25,7 +25,6 @@ App({
       }
     }).finally(() => {
       console.log('host:', self.host)
-      wx.hideLoading();
     })
   }
 })

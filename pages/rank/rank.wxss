@@ -38,9 +38,29 @@
   font-weight: bold;
   background-color: #ffffcc;
 }
+
 .cell {
   padding: 8px;
   border: none;
   flex: 1;
   text-align: center;
+}
+
+.empty {
+  text-align: center;
+  padding: 20rpx;
+}
+
+.show-more {
+  padding: 20rpx;
+}
+
+.show-more button {
+  flex: 0 0 220rpx;
+  background-color: #00a000;
+  color: #fff;
+  padding: 15rpx;
+  border-radius: 5rpx;
+  font-weight: normal;
+  font-size: 28rpx;
 }

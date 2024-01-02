@@ -12,12 +12,22 @@
             <view class="cell">{{item}}</view>
           </block>
         </view>
-        <block wx:for="{{tables[index].content}}" wx:for-index="index" wx:key="index2">
-          <view class="row">
-            <view class="cell">{{index+1}}</view>
-            <view class="cell">{{item.name}}</view>
-            <view class="cell">{{item.count}}</view>
-          </view>
+        <block wx:if="{{tables[index].content.length > 0}}">
+          <block wx:for="{{tables[index].content}}" wx:for-index="index" wx:key="index2">
+            <view class="row">
+              <view class="cell">{{index+1}}</view>
+              <view class="cell">{{item.name}}</view>
+              <view class="cell">{{item.count}}</view>
+            </view>
+          </block>
+          <block wx:if="{{tables[index].total_count > tables[index].content.length}}">
+            <view class="row show-more" bind:tap="onShowFullRank" data-index="{{index}}">
+              <button>显示完整榜单</button>
+            </view>
+          </block>
+        </block>
+        <block wx:else>
+          <view class="empty">暂无任何内容</view>
         </block>
       </view>
     </view>
