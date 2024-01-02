@@ -28,6 +28,6 @@
     </view>
   </view>
   <view class="flex-row">
-    <button id="submit" bind:tap="onCheckIn">打卡</button>
+    <button id="submit" bind:tap="onSubmit">打卡</button>
   </view>
 </view>

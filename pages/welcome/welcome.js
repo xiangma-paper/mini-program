@@ -112,6 +112,7 @@ Page({
           this.gotoNextPage()
         })
         .catch(error => {
+          console.error('welcome.onEnter() failed:', error)
           wx.hideLoading()
           wx.showToast({title: '登录失败', icon: 'none'})
         })
