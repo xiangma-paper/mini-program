@@ -39,12 +39,35 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid darkgray;
+  border-bottom: 1px solid darkgray;
 }
 
 .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid darkgray;
   font-weight: bold;
   background-color: #ffffcc;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid darkgray;
+  background-color: transparent;
+  padding: 20rpx;
+}
+
+.row:nth-child(even) {
+  background-color: #cccccc;
+}
+
+.row:nth-child(odd) {
+  background-color: white;
 }
 
 .cell {
@@ -59,11 +82,7 @@
   padding: 20rpx;
 }
 
-.show-more {
-  padding: 20rpx;
-}
-
-.show-more button {
+.footer button {
   flex: 0 0 220rpx;
   background-color: #00a000;
   color: #fff;
