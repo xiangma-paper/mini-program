@@ -1,5 +1,10 @@
+<view class="navbar">
+  <block wx:for="{{tabs}}" wx:key="index">
+    <view class="rank-tab {{index === currentTab ? 'tab-on' : ''}}" bindtap="switchTab" data-index="{{index}}">{{item}}</view>
+  </block>
+</view>
 <view class="container">
-  <block wx:for="{{tables}}" wx:key="index">
+  <block wx:for="{{papers}}" wx:key="index">
     <view class="card">
       <view class="creator">{{item.creator}}</view>
       <view class="create-time">{{item.create_time}}</view>

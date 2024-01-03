@@ -1,20 +1,5 @@
 const app = getApp()
 
-function fetchPaperList(callback) {
-  wx.request({
-    url: app.host + '/api/fetch_paper_list',
-    method: 'POST',
-    header: {
-      'content-type': 'application/json',
-      'X-CSRFToken': app.csrfToken,
-      'Cookie': 'csrftoken=' + app.csrfToken
-    },
-    data: {token: app.token},
-    success: res => callback(undefined, res),
-    fail: error => callback(error)
-  })
-}
-
 function fetchRankList(callback) {
   wx.request({
     url: app.host + '/api/fetch_rank_list',
@@ -49,7 +34,6 @@ function fetchRankFullList(self, index, callback) {
 }
 
 module.exports = {
-  fetchPaperList,
   fetchRankList,
   fetchRankFullList,
 }

@@ -1,3 +1,24 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.rank-tab {
+  margin: 0 auto;
+  padding: 5px 0;
+  flex-grow: 1;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  border: 1px solid darkgray;
+  font-size: smaller;
+  text-align: center;
+}
+
+.tab-on {
+  background-color: lightgreen;
+  font-weight: bold;
+}
+
 .container {
   margin: 10px;
 }
