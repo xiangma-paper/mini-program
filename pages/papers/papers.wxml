@@ -4,19 +4,24 @@
   </block>
 </view>
 <view class="container">
-  <block wx:for="{{papers}}" wx:key="index">
-    <view class="card">
-      <view class="creator">{{item.creator}}</view>
-      <view class="create-time">{{item.create_time}}</view>
-      <view class="title">{{item.title}}</view>
-      <view class="paper-info">
-        <text>{{item.pub_year}}, {{item.journal}}</text>
-        <text wx:if="{{item.doi}}">. doi: {{item.doi}}</text>
-        <text wx:if="{{item.pmid}}">. PMID: {{item.pmid}}</text>
-        <text wx:if="{{item.arxiv_id}}">. arXiv ID: {{item.arxiv_id}}</text>
-        <text wx:if="{{item.pmcid}}">. PMCID: {{item.pmcid}}</text>
+  <block wx:if="{{papers.length > 0}}">
+    <block wx:for="{{papers}}" wx:key="index">
+      <view class="card">
+        <view class="creator">{{item.creator}}</view>
+        <view class="create-time">{{item.create_time}}</view>
+        <view class="title">{{item.title}}</view>
+        <view class="paper-info">
+          <text>{{item.pub_year}}, {{item.journal}}</text>
+          <text wx:if="{{item.doi}}">. doi: {{item.doi}}</text>
+          <text wx:if="{{item.pmid}}">. PMID: {{item.pmid}}</text>
+          <text wx:if="{{item.arxiv_id}}">. arXiv ID: {{item.arxiv_id}}</text>
+          <text wx:if="{{item.pmcid}}">. PMCID: {{item.pmcid}}</text>
+        </view>
+        <view class="comment">{{item.comments}}</view>
       </view>
-      <view class="comment">{{item.comments}}</view>
-    </view>
+    </block>
+  </block>
+  <block wx:else>
+    <view class="empty">暂无任何内容</view>
   </block>
 </view>

@@ -58,3 +58,8 @@
   font-size: small;
   word-wrap: break-word;
 }
+
+.empty {
+  text-align: center;
+  padding: 20rpx;
+}

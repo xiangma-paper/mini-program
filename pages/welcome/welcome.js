@@ -76,6 +76,9 @@ Page({
     wx.setStorageSync('token', res.data.token)
     wx.setStorageSync('csrfToken', res.data.csrfToken)
     wx.setStorageSync('nickname', res.data.nickname)
+    if (res.data.debug) {
+      this.setDebugMode(true)
+    }
     if (res.data.nickname != '') {
       this.gotoNextPage()
     } else {
