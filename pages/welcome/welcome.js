@@ -26,7 +26,25 @@ Page({
       })
       .then(res => {
         console.debug('myLogin() returns:', res)
-        this.afterLogin(res)
+        if (!res.data.debug) {
+          this.afterLogin(res)
+        } else {
+          this.setDebugMode(true)
+          // since server changed for debug mode, we need to call login (on dev server) again
+          console.debug('call myLogin again')
+          this.wxLogin()
+            .then(res => {
+              console.debug('wxLogin() returns:', res)
+              if (!res.code) {
+                return Promise.reject(res.errMsg)
+              }
+              return this.myLogin(res.code)
+            })
+            .then(res => {
+              console.debug('myLogin() returns:', res)
+              this.afterLogin(res)
+            })
+        }
       })
       .catch(error => {
         console.error('welcome.onLoad() failed:', error)
@@ -69,17 +87,6 @@ Page({
   afterLogin: function(res) {
     if (!res.data.success) {
       return Promise.reject(res.errMsg)
-    }
-    if (res.data.debug) {
-      this.setDebugMode(true)
-      // since server changed for debug mode, we need to call login (on dev server) again
-      console.debug('call myLogin again')
-      this.myLogin(res.code)
-        .then(res => {
-          console.debug('myLogin() returns:', res)
-          this.afterLogin(res)
-        })
-      return
     }
     app.token = res.data.token
     app.csrfToken = res.data.csrfToken
