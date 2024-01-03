@@ -70,15 +70,23 @@ Page({
     if (!res.data.success) {
       return Promise.reject(res.errMsg)
     }
+    if (res.data.debug) {
+      this.setDebugMode(true)
+      // since server changed for debug mode, we need to call login (on dev server) again
+      console.debug('call myLogin again')
+      this.myLogin(res.code)
+        .then(res => {
+          console.debug('myLogin() returns:', res)
+          this.afterLogin(res)
+        })
+      return
+    }
     app.token = res.data.token
     app.csrfToken = res.data.csrfToken
     app.nickname = res.data.nickname
     wx.setStorageSync('token', res.data.token)
     wx.setStorageSync('csrfToken', res.data.csrfToken)
     wx.setStorageSync('nickname', res.data.nickname)
-    if (res.data.debug) {
-      this.setDebugMode(true)
-    }
     if (res.data.nickname != '') {
       this.gotoNextPage()
     } else {
