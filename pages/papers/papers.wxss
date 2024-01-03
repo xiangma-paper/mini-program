@@ -24,6 +24,8 @@
 }
 .title {
   font-weight: bold;
+  font-size: large;
+  padding: 10rpx 0 20rpx;
 }
 .paper-info {
   margin-bottom: 10px;
@@ -31,6 +33,7 @@
 
 .comment {
   border-top: 1px solid darkgray;
-  font-size: 13px;
+  padding: 20rpx 0;
+  font-size: small;
   word-wrap: break-word;
 }

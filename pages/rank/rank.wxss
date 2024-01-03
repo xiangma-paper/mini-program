@@ -4,14 +4,14 @@
 }
 
 .rank-tab {
-  font-size: 12px;
   margin: 0 auto;
   padding: 5px 0;
   flex-grow: 1;
-  text-align: center;
   border-top-left-radius: 10rpx;
   border-top-right-radius: 10rpx;
   border: 1px solid darkgray;
+  font-size: smaller;
+  text-align: center;
 }
 
 .tab-on {
@@ -28,10 +28,10 @@
 }
 
 .table {
-  font-size: 12px;
   width: 100%;
   border-collapse: collapse;
   border: 1px solid darkgray;
+  font-size: small;
 }
 
 .row {
@@ -89,5 +89,5 @@
   padding: 15rpx;
   border-radius: 5rpx;
   font-weight: normal;
-  font-size: 28rpx;
+  font-size: smaller;
 }

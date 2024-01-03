@@ -1,17 +1,19 @@
 .container {
   padding: 40rpx;
+  font-size: small;
 }
 
 .section {
   margin-bottom: 30rpx;
   border: 1px solid darkgray;
+  background-color: #eeeeee;
   border-radius: 20rpx;
   padding: 30rpx 20rpx 10rpx 20rpx;
 }
 
 input {
   border: 1px solid darkgray;
-  height: 60rpx;
+  height: 50rpx;
 }
 
 textarea {
@@ -26,20 +28,20 @@ textarea {
   margin-bottom: 20rpx;
 }
 .flex-row label {
-  width: 80rpx;
+  width: 70rpx;
 }
 .flex-row input {
   flex-grow: 1;
 }
 
 .attached-button {
-  flex: 0 0 160rpx;
+  flex: 0 0 120rpx;
   padding: 10rpx;
   background-color: #00a000;
   color: #fff;
   border-radius: 5rpx;
   font-weight: normal;
-  font-size: 28rpx;
+  font-size: smaller;
 }
 
 .textarea-row {
@@ -58,5 +60,5 @@ textarea {
   padding: 15rpx;
   border-radius: 5rpx;
   font-weight: normal;
-  font-size: 36rpx;
+  font-size: smaller;
 }

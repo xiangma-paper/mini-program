@@ -1,29 +1,33 @@
 .container {
-  padding: 10px;
+  padding: 20rpx;
+}
+
+.section {
+  margin-top: 20rpx;
 }
 
 .title {
   display: block;
-  font-size: large;
+  font-size: larger;
   font-weight: bold;
   text-align: center;
 }
+
 .slogan {
   display: block;
   text-align: center;
 }
 
-.section {
-  margin-top: 10px;
-}
 .section-title {
+  margin-top: 40rpx;
   line-height: 2em;
   display: block;
   font-weight: bold;
 }
+
 .paragraph {
   display: block;
-  margin-top: 5px;
+  margin-top: 30rpx;
   word-wrap: break-word;
 }
 
@@ -33,7 +37,8 @@
 }
 
 .footer {
-  margin-top: 10px;
+  margin-top: 40rpx;
+  padding: 20rpx;
   border-top: 1px solid darkgray;
   text-align: center;
   color: darkgray;
