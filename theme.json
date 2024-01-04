@@ -1,0 +1,42 @@
+{
+  "light": {
+      "navBgColor": "#f6f6f6",
+      "navTxtStyle": "black",
+      "bgColor": "#ffffff",
+      "bgTxtStyle": "light",
+      "bgColorTop": "#eeeeee",
+      "bgColorBottom": "#efefef",
+      "tabFontColor": "#000000",
+      "tabSelectedColor": "#3cc51f",
+      "tabBgColor": "#ffffff",
+      "tabBorderStyle": "black",
+      "iconPath1": "images/1-1-checkin-light.png",
+      "selectedIconPath1": "images/1-2-seleted-checkin-light.png",
+      "iconPath2": "images/2-1-papers-light.png",
+      "selectedIconPath2": "images/2-2-selected-papers-light.png",
+      "iconPath3": "images/3-1-rank-light.png",
+      "selectedIconPath3": "images/3-2-selected-rank-light.png",
+      "iconPath4": "images/4-1-about-light.png",
+      "selectedIconPath4": "images/4-2-selected-about-light.png"
+  },
+  "dark": {
+      "navBgColor": "#191919",
+      "navTxtStyle": "white",
+      "bgColor": "#1f1f1f",
+      "bgTxtStyle": "dark",
+      "bgColorTop": "#191919",
+      "bgColorBottom": "#1f1f1f",
+      "tabFontColor": "#ffffff",
+      "tabSelectedColor": "#51a937",
+      "tabBgColor": "#191919",
+      "tabBorderStyle": "white",
+      "iconPath1": "images/1-1-checkin-light.png",
+      "selectedIconPath1": "images/1-2-seleted-checkin-light.png",
+      "iconPath2": "images/2-1-papers-light.png",
+      "selectedIconPath2": "images/2-2-selected-papers-light.png",
+      "iconPath3": "images/3-1-rank-light.png",
+      "selectedIconPath3": "images/3-2-selected-rank-light.png",
+      "iconPath4": "images/4-1-about-light.png",
+      "selectedIconPath4": "images/4-2-selected-about-light.png"
+  }
+}

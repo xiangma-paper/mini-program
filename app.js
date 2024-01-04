@@ -3,5 +3,5 @@ App({
   host_debug: 'https://paper-hub.cn:8443',
   token: '',
   csrfToken: '',
-  nickname: ''
+  nickname: '',
 })

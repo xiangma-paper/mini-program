@@ -49,7 +49,7 @@
   align-items: center;
   border-bottom: 1px solid darkgray;
   font-weight: bold;
-  background-color: #ffffcc;
+  background-color: #ffc;
 }
 
 .footer {
@@ -63,11 +63,28 @@
 }
 
 .row:nth-child(even) {
-  background-color: #cccccc;
+  background-color: #ccc;
 }
 
 .row:nth-child(odd) {
-  background-color: white;
+  background-color: #fff;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .tab-on {
+    background-color: green;
+  }
+  .header {
+    background-color: #330;
+  }
+  .row:nth-child(even) {
+    background-color: #333;
+  }
+  
+  .row:nth-child(odd) {
+    background-color: #000;
+  }
 }
 
 .cell {

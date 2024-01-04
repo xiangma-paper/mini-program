@@ -3,6 +3,7 @@ const api = require('../../utils/api.js')
 
 Page({
   data: {
+    themeClass: '',
     paperId: '',
     title: '',
     journal: '',
@@ -12,6 +13,11 @@ Page({
   },
   onLoad: function() {
     console.log('checkin.onLoad()')
+    if (app.isDarkMode) {
+      this.setData({themeClass:'darkmode'})
+    } else {
+      this.setData({themeClass:''})
+    }
     let nickname = wx.getStorageSync('nickname')
     this.setData({nickname: nickname})
   },

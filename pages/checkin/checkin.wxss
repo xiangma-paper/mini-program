@@ -6,9 +6,15 @@
 .section {
   margin-bottom: 30rpx;
   border: 1px solid darkgray;
-  background-color: #eeeeee;
+  background-color: #eee;
   border-radius: 20rpx;
   padding: 30rpx 20rpx 10rpx 20rpx;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section {
+    background-color: #333;
+  }
 }
 
 input {

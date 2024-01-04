@@ -7,44 +7,49 @@
     "pages/about/about"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#E6E6FA",
     "navigationBarTitleText": "响马读paper",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "backgroundColor": "@bgColor",
+    "backgroundTextStyle": "@bgTxtStyle",
+    "backgroundColorTop": "@bgColorTop",
+    "backgroundColorBottom": "@bgColorBottom"
   },
   "tabBar": {
-    "color": "#808080",
-    "selectedColor": "#00c000",
-    "backgroundColor": "#ffffff",
+    "color": "@tabFontColor",
+    "selectedColor": "@tabSelectedColor",
+    "backgroundColor": "@tabBgColor",
+    "borderStyle": "@tabBorderStyle",
     "list": [
       {
         "pagePath": "pages/checkin/checkin",
         "text": "打卡",
-        "iconPath": "images/1-checkin.png",
-        "selectedIconPath": "images/1-checkin-active.png"
+        "iconPath": "@iconPath1",
+        "selectedIconPath": "@selectedIconPath1"
       },
       {
         "pagePath": "pages/papers/papers",
         "text": "文献",
-        "iconPath": "images/2-papers.png",
-        "selectedIconPath": "images/2-papers-active.png"
+        "iconPath": "@iconPath2",
+        "selectedIconPath": "@selectedIconPath2"
       },
       {
         "pagePath": "pages/rank/rank",
         "text": "榜单",
-        "iconPath": "images/3-rank.png",
-        "selectedIconPath": "images/3-rank-active.png"
+        "iconPath": "@iconPath3",
+        "selectedIconPath": "@selectedIconPath3"
       },
       {
         "pagePath": "pages/about/about",
         "text": "社群",
-        "iconPath": "images/4-about.png",
-        "selectedIconPath": "images/4-about-active.png"
+        "iconPath": "@iconPath4",
+        "selectedIconPath": "@selectedIconPath4"
       }
     ]
   },
   "style": "v2",
   "darkmode": true,
+  "themeLocation": "theme.json",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"
 }

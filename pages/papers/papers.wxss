@@ -28,8 +28,18 @@
   border-radius: 10px;
   margin-bottom: 20px;
   padding: 10px;
-  background-color: #eeeeee;
+  background-color: #eee;
   font-size: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tab-on {
+    background-color: green;
+  }
+
+  .card {
+    background-color: #333;
+  }
 }
 
 .creator {

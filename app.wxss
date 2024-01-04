@@ -1,6 +1,4 @@
-view, text, button, scroll-view, swiper, image, input, textarea, radio, checkbox, picker, navigator, icon, progress, rich-text {
+view, scroll-view, label, text, button, input, image, textarea, progress, rich-text
+radio, checkbox, picker, navigator, icon, swiper {
   box-sizing: border-box;
-}
-page {
-  background-color: #E6E6FA; /* Example: A light lavender color */
 }
