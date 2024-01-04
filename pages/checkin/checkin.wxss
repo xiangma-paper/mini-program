@@ -42,7 +42,9 @@ textarea {
 
 .attached-button {
   flex: 0 0 120rpx;
+  height: 70rpx;
   padding: 10rpx;
+  line-height: 50rpx;
   background-color: #00a000;
   color: #fff;
   border-radius: 5rpx;
@@ -54,6 +56,30 @@ textarea {
   margin-bottom: 20rpx;
 }
 
+.textarea-row .comment-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textarea-row .comment-label-row .comment-label {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.textarea-row .comment-label-row .comment-by-gpt {
+  flex: 0 0 150rpx;
+  text-align: center;
+  height: 70rpx;
+  padding: 10rpx;
+  line-height: 50rpx;
+  background-color: #00a000;
+  color: #fff;
+  border-radius: 5rpx;
+  font-weight: normal;
+  font-size: smaller;
+}
+
 .submit-row {
   display: block;
   text-align: center;
@@ -63,8 +89,18 @@ textarea {
   flex: 0 0 160rpx;
   background-color: #00a000;
   color: #fff;
-  padding: 15rpx;
+  height: 70rpx;
+  padding: 10rpx;
+  line-height: 50rpx;
   border-radius: 5rpx;
   font-weight: normal;
   font-size: smaller;
+}
+
+.input-ok {
+  border-color: darkgray;
+}
+
+.input-error {
+  border-color: red;
 }

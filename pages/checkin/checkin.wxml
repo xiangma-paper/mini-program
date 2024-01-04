@@ -1,30 +1,33 @@
 <view class="container">
   <view class="section">
     <view class="flex-row">
-      <input id="paper_id" placeholder="DOI/PMID/PMCID/arXivID" value="{{paperId}}" bindinput="onPaperIdInput"/>
+      <input id="paper_id" class="{{isPaperIdError ? 'input-error' : 'input-ok'}}" focus="{{paperIdFocus}}" placeholder="DOI/PMID/PMCID/arXivID" value="{{paperId}}" bindinput="onPaperIdInput"/>
       <button class="attached-button" bind:tap="onFetch">提取信息</button>
     </view>
     <view class="flex-row">
       <label>标题</label>
-      <input id="title" value="{{title}}" bindinput="onTitleInput"/>
+      <input id="title" class="{{isTitleError ? 'input-error' : 'input-ok'}}" focus="{{titleFocus}}" value="{{title}}" bindinput="onTitleInput"/>
     </view>
     <view class="flex-row">
       <label>杂志</label>
-      <input id="journal" value="{{journal}}" bindinput="onJournalInput"/>
+      <input id="journal" class="{{isJournalError ? 'input-error' : 'input-ok'}}" focus="{{journalFocus}}" value="{{journal}}" bindinput="onJournalInput"/>
     </view>
     <view class="flex-row">
       <label>年份</label>
-      <input id="pub_year" value="{{pubYear}}" bindinput="onPubYearInput"/>
+      <input id="pub_year" class="{{isPubYearError ? 'input-error' : 'input-ok'}}" focus="{{pubYearFocus}}" value="{{pubYear}}" bindinput="onPubYearInput"/>
     </view>
   </view>
   <view class="section">
     <view class="flex-row">
       <label>昵称</label>
-      <input type="nickname" id="nickname" value="{{nickname}}" bindinput="onNicknameInput"/>
+      <input type="nickname" id="nickname" class="{{isNicknameError ? 'input-error' : 'input-ok'}}" focus="{{nicknameFocus}}" value="{{nickname}}" bindinput="onNicknameInput"/>
     </view>
     <view class="textarea-row">
-      <label>简评</label>
-      <textarea id="comment" value="{{comment}}" bindinput="onCommentInput"/>
+      <view class="comment-label-row">
+        <label class="comment-label">简评</label>
+        <button class="comment-by-gpt" bind:tap="onSummarizeByGPT">用GPT总结</button>
+      </view>
+      <textarea id="comment" class="{{isCommentError ? 'input-error' : 'input-ok'}}" focus="{{commentFocus}}" value="{{comment}}" bindinput="onCommentInput"/>
     </view>
   </view>
   <view class="flex-row">
