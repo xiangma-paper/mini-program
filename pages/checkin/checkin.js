@@ -1,5 +1,4 @@
 const app = getApp()
-const api = require('../../utils/api.js')
 
 Page({
   data: {
@@ -86,6 +85,7 @@ Page({
         },
         data: {
           token: app.token,
+          group_name: 'xiangma',
           paper_id: this.data.paperId,
           title: this.data.title,
           journal: this.data.journal,
