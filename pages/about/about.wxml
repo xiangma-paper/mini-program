@@ -3,7 +3,10 @@
     <text user-select="true">响马读paper</text>
   </view>
   <view class="slogan">
-    <text user-select="true">坚持读paper，一起精进60年。</text>
+    <text user-select="true">坚持读paper，一起精进60年！</text>
+  </view>
+  <view class="version">
+    <text user-select="true">(小程序版本：{{version}})</text>
   </view>
   <view class="section">
     <text user-select="true">

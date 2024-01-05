@@ -13,9 +13,11 @@
   text-align: center;
 }
 
-.slogan {
-  display: block;
+.slogan,
+.version {
   text-align: center;
+  font-size: smaller;
+  margin-top: 30rpx;
 }
 
 .section-title {
