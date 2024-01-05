@@ -49,7 +49,7 @@
   align-items: center;
   border-bottom: 1px solid darkgray;
   font-weight: bold;
-  background-color: #ffc;
+  background-color: #ffe;
 }
 
 .footer {
@@ -63,7 +63,7 @@
 }
 
 .row:nth-child(even) {
-  background-color: #ccc;
+  background-color: #eee;
 }
 
 .row:nth-child(odd) {

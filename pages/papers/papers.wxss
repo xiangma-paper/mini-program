@@ -28,7 +28,7 @@
   border-radius: 10px;
   margin-bottom: 20px;
   padding: 10px;
-  background-color: #ddd;
+  background-color: #eee;
   font-size: 14px;
 }
 

@@ -6,28 +6,36 @@
 .section {
   margin-bottom: 30rpx;
   border: 1px solid darkgray;
-  background-color: #ddd;
+  background-color: #eee;
   border-radius: 20rpx;
   padding: 30rpx 20rpx 10rpx 20rpx;
+}
+
+input {
+  border: 1px solid darkgray;
+  background-color: #ffe;
+  height: 50rpx;
+}
+
+textarea {
+  border: 1px solid darkgray;
+  background-color: #ffe;
+  height: 320rpx;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
   .section {
     background-color: #333;
   }
-}
 
-input {
-  border: 1px solid darkgray;
-  background-color: #eee;
-  height: 50rpx;
-}
+  input {
+    background-color: #330;
+  }
 
-textarea {
-  border: 1px solid darkgray;
-  background-color: #eee;
-  height: 320rpx;
-  width: 100%;
+  textarea {
+    background-color: #330;
+  }
 }
 
 .flex-row {

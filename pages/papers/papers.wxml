@@ -8,8 +8,8 @@
     <block wx:for="{{papers}}" wx:key="index">
       <view class="card">
         <view class="row">
-          <text class="creator">{{item.creator}}:</text>
-          <text class="create-time">{{item.create_time}}</text>
+          <text class="creator" user-select="true">{{item.creator}}:</text>
+          <text class="create-time" user-select="true">{{item.create_time}}</text>
         </view>
         <view class="title">
           <text user-select="true">{{item.title}}</text>
