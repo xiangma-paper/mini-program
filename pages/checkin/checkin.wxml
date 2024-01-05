@@ -27,7 +27,7 @@
         <label class="comment-label">简评</label>
         <button class="comment-by-gpt" bind:tap="onSummarizeByGPT">用GPT总结</button>
       </view>
-      <textarea id="comment" class="{{isCommentError ? 'input-error' : 'input-ok'}}" focus="{{commentFocus}}" value="{{comment}}" bindinput="onCommentInput"/>
+      <textarea id="comment" class="{{isCommentError ? 'input-error' : 'input-ok'}}" focus="{{commentFocus}}" maxlength="65536" value="{{comment}}" bindinput="onCommentInput"/>
     </view>
   </view>
   <view class="flex-row">
