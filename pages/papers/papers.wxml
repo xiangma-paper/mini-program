@@ -7,19 +7,25 @@
   <block wx:if="{{papers.length > 0}}">
     <block wx:for="{{papers}}" wx:key="index">
       <view class="card">
-        <view class="creator">{{item.creator}}</view>
-        <view class="create-time">{{item.create_time}}</view>
-        <text user-select="true">
-          <text class="title">{{item.title}}</text>
-          <text class="paper-info">
+        <view class="row">
+          <text class="creator">{{item.creator}}:</text>
+          <text class="create-time">{{item.create_time}}</text>
+        </view>
+        <view class="title">
+          <text user-select="true">{{item.title}}</text>
+        </view>
+        <view class="paper-info">
+          <text user-select="true">
             <text>{{item.pub_year}}, {{item.journal}}</text>
             <text wx:if="{{item.doi}}">. doi: {{item.doi}}</text>
             <text wx:if="{{item.pmid}}">. PMID: {{item.pmid}}</text>
             <text wx:if="{{item.arxiv_id}}">. arXiv ID: {{item.arxiv_id}}</text>
             <text wx:if="{{item.pmcid}}">. PMCID: {{item.pmcid}}</text>
           </text>
-          <text class="comment">{{item.comments}}</text>
-        </text>
+        </view>
+        <view class="comment">
+          <text user-select="true">{{item.comments}}</text>
+        </view>
       </view>
     </block>
   </block>

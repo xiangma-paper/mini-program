@@ -6,7 +6,7 @@
 .section {
   margin-bottom: 30rpx;
   border: 1px solid darkgray;
-  background-color: #eee;
+  background-color: #ddd;
   border-radius: 20rpx;
   padding: 30rpx 20rpx 10rpx 20rpx;
 }
@@ -19,11 +19,13 @@
 
 input {
   border: 1px solid darkgray;
+  background-color: #eee;
   height: 50rpx;
 }
 
 textarea {
   border: 1px solid darkgray;
+  background-color: #eee;
   height: 320rpx;
   width: 100%;
 }
