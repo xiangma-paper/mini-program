@@ -4,7 +4,7 @@ Page({
   data: {
     currentTab: 0,
     tabs: ["全部", "本月", "上月", "我的"],
-    papers: []
+    papers: [],
   },
   onLoad: function() {
     console.log('papers.onLoad()')
@@ -17,13 +17,21 @@ Page({
   onPullDownRefresh: function() {
     console.log('papers.onPullDownRefresh()')
     this.refreshPage()
-    wx.stopPullDownRefresh();
+    wx.stopPullDownRefresh()
   },
-  refreshPage: function() {
+  refreshPage: function(loadMore = false) {
     wx.showLoading({title: '正在查询……', mask: true})
-    this.fetchPaperList(this.data.currentTab)
+    let index = (loadMore ? this.data.papers.length : 0)
+    console.log('index = ', index)
+    this.fetchPaperList(this.data.currentTab, index)
       .then(res => {
-        this.setData({papers: res.data.results})
+        console.log('res:', res)
+        if (loadMore) {
+          let papers = this.data.papers
+          this.setData({papers: papers.concat(res.data.results)})
+        } else {
+          this.setData({papers: res.data.results})
+        }
         wx.hideLoading()
       })
       .catch(error => {
@@ -36,7 +44,7 @@ Page({
         })
       })
   },
-  fetchPaperList: function(mode) {
+  fetchPaperList: function(mode, index) {
     return new Promise((resolve, reject) => {
       wx.request({
         url: app.host + '/api/fetch_paper_list',
@@ -49,7 +57,8 @@ Page({
         data: {
           token: app.token,
           mode: mode,
-          group_name: 'xiangma'
+          group_name: 'xiangma',
+          index: index,
         },
         success: resolve,
         fail: reject
@@ -60,5 +69,9 @@ Page({
     const index = event.currentTarget.dataset.index;
     this.setData({ currentTab: index })
     this.refreshPage()
+  },
+  loadMore: function() {
+    console.debug('loadMore')
+    this.refreshPage(true)
   }
 })

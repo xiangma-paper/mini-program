@@ -1,3 +1,9 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -20,7 +26,14 @@
 }
 
 .container {
-  margin: 10px;
+  flex: 1;
+  padding: 20rpx;
+  overflow-y: auto;
+}
+
+.scrollable-element {
+  height: 80vh;
+  overflow-y: auto;
 }
 
 .card {

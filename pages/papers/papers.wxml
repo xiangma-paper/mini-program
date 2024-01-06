@@ -1,9 +1,10 @@
+<view class="page">
 <view class="navbar">
   <block wx:for="{{tabs}}" wx:key="index">
     <view class="rank-tab {{index === currentTab ? 'tab-on' : ''}}" bindtap="switchTab" data-index="{{index}}">{{item}}</view>
   </block>
 </view>
-<view class="container">
+<scroll-view id="scrollableElement" class="container scrollable-element" scroll-y="true" bindscrolltolower="loadMore">
   <block wx:if="{{papers.length > 0}}">
     <block wx:for="{{papers}}" wx:key="index">
       <view class="card">
@@ -32,4 +33,5 @@
   <block wx:else>
     <view class="empty">暂无任何内容</view>
   </block>
+</scroll-view>
 </view>
