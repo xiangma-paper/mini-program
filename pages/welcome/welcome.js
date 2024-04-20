@@ -13,7 +13,6 @@ Page({
     this.myInit()
       .then(res => {
         console.debug('myInit() returns:', res)
-        this.setDebugMode(res.data.debug)
         return this.wxLogin()
       })
       .then(res => {
@@ -27,22 +26,6 @@ Page({
         console.debug('myLogin() returns:', res)
         if (!res.data.debug) {
           this.afterLogin(res)
-        } else {
-          this.setDebugMode(true)
-          // since server changed for debug mode, we need to call login (on dev server) again
-          console.debug('call myLogin again')
-          this.wxLogin()
-            .then(res => {
-              console.debug('wxLogin() returns:', res)
-              if (!res.code) {
-                return Promise.reject(res.errMsg)
-              }
-              return this.myLogin(res.code)
-            })
-            .then(res => {
-              console.debug('myLogin() returns:', res)
-              this.afterLogin(res)
-            })
         }
       })
       .catch(error => {
@@ -75,13 +58,6 @@ Page({
         fail: reject
       })
     })
-  },
-  setDebugMode: function(debug) {
-    if (debug) {
-      console.log('switch to DEBUG mode')
-      app.host = app.host_debug
-    }
-    console.log('host:', app.host)
   },
   afterLogin: function(res) {
     if (!res.data.success) {
