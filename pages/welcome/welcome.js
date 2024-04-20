@@ -1,4 +1,4 @@
-const app = getApp()
+const app = getApp();
 
 Page({
   data: {
@@ -8,76 +8,33 @@ Page({
     inputFocus: false,
   },
   onLoad: function() {
-    console.log('welcome.onLoad()')
-    wx.showLoading({title: '正在启动……', mask: true})
-    this.myInit()
-      .then(res => {
-        console.debug('myInit() returns:', res)
-        return this.wxLogin()
-      })
-      .then(res => {
-        console.debug('wxLogin() returns:', res)
-        if (!res.code) {
-          return Promise.reject(res.errMsg)
-        }
-        return this.myLogin(res.code)
-      })
-      .then(res => {
-        console.debug('myLogin() returns:', res)
-        if (!res.data.debug) {
-          this.afterLogin(res)
-        }
-      })
-      .catch(error => {
-        console.error('welcome.onLoad() failed:', error)
-        wx.hideLoading()
-        wx.showToast({title: '启动失败', icon: 'none'})
-      })
-    console.log('welcome.onLoad() exiting')
-  },
-  wxLogin: function() {
-    return new Promise((resolve, reject) => {
-      wx.login({success: resolve, fail: reject})
-    })
-  },
-  wxRequest: function(url) {
-    return new Promise((resolve, reject) => {
-      wx.request({url: url, success: resolve, fail: reject})
-    })
-  },
-  myInit: function() {
-    return this.wxRequest(app.host + '/api/wx')
-  },
-  myLogin: function(code) {
-    return new Promise((resolve, reject) => {
-      wx.request({
-        url: app.host + '/api/wx_login',
-        method: 'POST',
-        data: {code: code},
-        success: resolve,
-        fail: reject
-      })
-    })
-  },
-  afterLogin: function(res) {
-    if (!res.data.success) {
-      return Promise.reject(res.errMsg)
-    }
-    app.token = res.data.token
-    app.csrfToken = res.data.csrfToken
-    app.nickname = res.data.nickname
-    wx.setStorageSync('token', res.data.token)
-    wx.setStorageSync('csrfToken', res.data.csrfToken)
-    wx.setStorageSync('nickname', res.data.nickname)
-    if (res.data.nickname != '') {
-      this.gotoNextPage()
-    } else {
-      this.setData({
-        isLoading: false,
-        nickname: res.data.nickname
-      })
-      wx.hideLoading()
-    }
+    // 登录
+    wx.showLoading({title: '正在启动……'});
+    wx.login({
+      success: res => {
+        wx.request({
+          url: app.host + '/api/wx_login',
+          method: 'POST',
+          data: {code: res.code},
+          success: res => {
+            if (res.data.success) {
+              console.log(res.data);
+              app.token = res.data.token;
+              app.csrfToken = res.data.csrfToken;
+              app.nickname = res.data.nickname;
+              if (app.nickname != '') {
+                this.gotoNextPage();
+              } else {
+                this.setData({isLoading: false, nickname: app.nickname});
+              }
+            }
+          }
+        })
+      },
+      complete: res => {
+        wx.hideLoading();
+      }
+    });
   },
   onNicknameInput: function(e) {
     this.setData({nickname: e.detail.value})
@@ -100,7 +57,7 @@ Page({
       wx.showLoading({title: '正在登录……', mask: true})
       this.updateNickname(this.data.nickname)
         .then(res => {
-          wx.setStorageSync('nickname', res.data.nickname)
+          app.nickname = res.data.nickname;
           wx.hideLoading()
           this.gotoNextPage()
         })

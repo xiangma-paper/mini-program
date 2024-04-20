@@ -22,8 +22,7 @@ Page({
     } else {
       this.setData({themeClass:''})
     }
-    let nickname = wx.getStorageSync('nickname')
-    this.setData({nickname: nickname})
+    this.setData({nickname: app.nickname})
   },
   onPaperIdInput: function(e) {
     this.setData({paperId: e.detail.value})
